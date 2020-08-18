@@ -9,13 +9,13 @@ module.exports = (config, callback) => {
   }
 
   const {
-    latitude, longitude, map,
+    latitude, longitude, map, key 
   } = config;
 
   delete config.latitude; // eslint-disable-line no-param-reassign
   delete config.longitude; // eslint-disable-line no-param-reassign
 
-  let address = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}`;
+  let address = `https://maps.googleapis.com/maps/api/geocode/json?key=${key}&latlng=${latitude},${longitude}`;
 
   switch (map) {
     case 'baidu':
